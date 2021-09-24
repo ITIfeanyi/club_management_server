@@ -1,0 +1,42 @@
+{
+  "engines": {
+    "node": "14.*"
+  },
+  "name": "club-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "set DEBUG=* & cross-env NODE_ENV=production nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITIfeanyi/club-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ITIfeanyi/club-management/issues"
+  },
+  "homepage": "https://github.com/ITIfeanyi/club-management#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.6.3",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
+  }
+}
