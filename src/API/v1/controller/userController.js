@@ -40,4 +40,14 @@ module.exports = {
       handleError(res, err, 400);
     }
   },
+  getAllUsers: async (req, res) => {
+    try {
+      const allUsers = await users.findAll({});
+      res.status(200).json({
+        Users: allUsers,
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
 };

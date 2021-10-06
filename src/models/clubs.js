@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ users, Club_users }) {
       // define association here
       this.belongsTo(users, { foreignKey: "creator_id", as: "admin" });
-      this.hasMany(Club_users, { foreignKey: "club_id", as: "member" });
+      this.hasMany(Club_users, { foreignKey: "club_id", as: "members" });
+      // this.belongsTo(users, { foreignKey: "id", as: "member" });
     }
 
     toJSON() {

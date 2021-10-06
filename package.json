@@ -7,7 +7,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "set DEBUG=* & cross-env NODE_ENV=production nodemon src/server.js"
+    "dev": "set DEBUG=* & cross-env NODE_ENV=development nodemon src/server.js"
   },
   "repository": {
     "type": "git",

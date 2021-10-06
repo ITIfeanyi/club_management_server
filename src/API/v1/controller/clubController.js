@@ -26,8 +26,23 @@ module.exports = {
   },
   getAllClubs: async (req, res) => {
     const allClub = await Clubs.findAll({
-      include: ["admin", "member"],
-      required: true,
+      include: [
+        {
+          model: users,
+          as: "admin",
+          required: true,
+        },
+        {
+          model: Club_users,
+          as: "members",
+          required: true,
+          include: {
+            model: users,
+            as: "club_member",
+            required: true,
+          },
+        },
+      ],
     });
 
     res.status(200).json({
@@ -39,7 +54,23 @@ module.exports = {
     const { id } = req.params;
     const club = await Clubs.findOne({
       where: { id },
-      include: ["admin", "member"],
+      include: [
+        {
+          model: users,
+          as: "admin",
+          required: true,
+        },
+        {
+          model: Club_users,
+          as: "members",
+          required: true,
+          include: {
+            model: users,
+            as: "club_member",
+            required: true,
+          },
+        },
+      ],
     });
     if (!club) {
       return handleError(res, "Club does not exist", 404);
